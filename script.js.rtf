@@ -1,0 +1,54 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww28600\viewh17280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 // NAVEGACI\'d3N ENTRE SECCIONES (INICIO / CUENTO / JUEGO)\
+function showSection(sectionId) \{\
+  // 1. Ocultar todas las secciones\
+  const sections = document.querySelectorAll('.content-section');\
+  sections.forEach(section => \{\
+    section.classList.remove('active-section');\
+  \});\
+\
+  // 2. Desactivar estilo en todos los botones de navegaci\'f3n\
+  const buttons = document.querySelectorAll('.nav-btn');\
+  buttons.forEach(button => \{\
+    button.classList.remove('active');\
+  \});\
+\
+  // 3. Mostrar la secci\'f3n seleccionada\
+  const activeSection = document.getElementById(sectionId);\
+  if (activeSection) \{\
+    activeSection.classList.add('active-section');\
+  \}\
+\
+  // 4. Activar el bot\'f3n correspondiente\
+  event.currentTarget.classList.add('active');\
+\}\
+\
+// L\'d3GICA PARA INTEGRAR EL JUEGO POSTERIORMENTE\
+document.addEventListener('DOMContentLoaded', () => \{\
+  console.log("P\'e1gina cargada correctamente. Lista para recibir el cuento y el juego.");\
+  \
+  /* \
+    ===============================================================\
+    ESPACIO RESERVADO PARA INICIALIZAR EL JUEGO (Phaser.js)\
+    ===============================================================\
+    Una vez que generen el c\'f3digo del juego con Phaser.js,\
+    pueden instanciarlo aqu\'ed dentro del contenedor '#phaser-game'.\
+    \
+    Ejemplo de inicializaci\'f3n:\
+    \
+    const config = \{\
+        type: Phaser.AUTO,\
+        width: 800,\
+        height: 400,\
+        parent: 'phaser-game',\
+        scene: \{ preload: preload, create: create, update: update \}\
+    \};\
+    const game = new Phaser.Game(config);\
+  */\
+\});}
